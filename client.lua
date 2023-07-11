@@ -7,7 +7,7 @@ AddEventHandler('ylean:restore_health_cl', function()
     local targetPlayer = GetPlayerPed(PlayerId())
     local currentHealth = GetEntityHealth(targetPlayer)
 
-    if currentHealth < Ylean.MaxHealth and (currentHealth + Ylean.Heal <= Ylean.MaxHealth) then
+    if currentHealth + Ylean.Heal <= Ylean.MaxHealth then
         SetEntityHealth(targetPlayer, currentHealth + Ylean.Heal)
     else
         SetEntityHealth(targetPlayer, Ylean.MaxHealth)
